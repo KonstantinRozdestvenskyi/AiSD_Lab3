@@ -139,8 +139,20 @@ int sizes[21];
 int sizes_sqr[100];
 int main()//bubble_average - перезаписать, но график правильный
 {
-    int size = 100;
-    for (int i = 0; i < 100; i++) {
+    int size;
+    cout << "put size:"<< endl;
+    cin >> size;
+    cout << "put array:" << endl;
+    for (int i = 0; i < size; i++) {
+        cin >> a[i];
+    }
+
+    mergeSort(a, 0, size);
+    cout << "sorted array:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << a[i] << ' ';
+    }
+   /* for (int i = 0; i < 100; i++) {
         sizes_sqr[i] = size;
         size += 100;
     }
@@ -151,9 +163,9 @@ int main()//bubble_average - перезаписать, но график правильный
         sizes[i] = size1;
         size1 += 50000;
     }
-    f1.open("shellSort_best.txt", ios::out);
-    f2.open("shellSort_average.txt", ios::out);
-    f3.open("shellSort_worst.txt", ios::out);
+    f1.open("Shell_best.txt", ios::out);
+    f2.open("Shell_average.txt", ios::out);
+    f3.open("Shell_worst.txt", ios::out);
     srand(time(0));
     for (int i = 0; i < 21; i++) {
 
@@ -167,7 +179,7 @@ int main()//bubble_average - перезаписать, но график правильный
             make_test(a, n);
 
             int start = clock();
-            shellSort(a, n);
+            sort(a, a + n);
             int end = clock();
 
             for (int i = 1; i < n; i++) {
@@ -185,5 +197,6 @@ int main()//bubble_average - перезаписать, но график правильный
         cout << "\n\nBest case for " << n << " is " << best_time << "ms." << endl;
         cout << "Avarage case for " << n << " is " << work_time / tests << "ms." << endl;
         cout << "Worst case for " << n << " is " << worst_time << "ms.\n\n" << endl;
-    }
+    }*/
+
 }
